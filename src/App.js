@@ -25,13 +25,13 @@ function App() {
 
   return (
     <div className={classes.content}>
-      FibCalc
-      Agata Wrześniewska
-      Grupa I2S 1.5
+      FibCalc <br></br>
+      Agata Wrześniewska<br></br>
+      Grupa I2S 1.5<br></br>
       <form onSubmit={submitHandler}>
         <label>
           Podaj numer wyrazu ciągu Fibonacciego:
-          <input type="number" defaultValue="0" min = "0" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
+          <input type="number" defaultValue="1" min = "1" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
         </label>
         <input type="submit" value="Submit" />
       </form>
