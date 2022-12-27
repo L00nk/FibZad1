@@ -25,6 +25,9 @@ function App() {
 
   return (
     <div className={classes.content}>
+      FibCalc
+      Agata Wrześniewska
+      Grupa I2S 1.5
       <form onSubmit={submitHandler}>
         <label>
           Podaj numer wyrazu ciągu Fibonacciego:
