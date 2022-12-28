@@ -51,8 +51,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          cache-from: type=registry,ref=docker.io/awrzesniewska/fibzad1:buildx-cache
-          cache-to: type=registry,ref=docker.io/awrzesniewska/fibzad1:buildx-cache
+          cache-from: type=registry,ref=docker.io/awrzesniewska/fibzad1:buildxcache
+          cache-to: type=registry,ref=docker.io/awrzesniewska/fibzad1:buildxcache
           platforms: linux/amd64,linux/arm64
           context: ./
           push: true
