@@ -18,6 +18,6 @@ FROM nginx AS runner
 
 COPY --from=builder /app/public /usr/share/nginx/html
 
-#WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
 
-#CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
+CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
