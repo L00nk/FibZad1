@@ -23,4 +23,4 @@ WORKDIR /app/public
 #RUN npm install
 #CMD ["node", "index.js"]
 EXPOSE 3000
-CMD ["node", "index.js"]
+CMD ["index.html"]
