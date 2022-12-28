@@ -20,5 +20,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 
 COPY --from=builder /app/public /app/public
 WORKDIR /app
-RUN npm install
-CMD ["node", "index.js"]
+#RUN npm install
+#CMD ["node", "index.js"]
+EXPOSE 3000
+CMD ["index.js"]

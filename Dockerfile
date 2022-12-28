@@ -2,7 +2,7 @@
 ## używam wieloetapowego budowania obrazów
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR '/app'
 
 COPY package.json .
 
@@ -19,5 +19,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 
 COPY --from=builder /app/public /app/public
 WORKDIR /app
-RUN npm install
-CMD ["node", "index.js"]
+EXPOSE 3000
+#RUN npm install
+#CMD ["node", "index.js"]
+CMD ["index.js"]
