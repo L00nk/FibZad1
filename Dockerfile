@@ -18,7 +18,7 @@ ENV NODE_ENV=production
 ENV NODE_OPTIONS=--openssl-legacy-provider
 
 COPY --from=builder /app/public /app/public
-WORKDIR /app
+WORKDIR /app/public
 EXPOSE 3000
 #RUN npm install
 #CMD ["node", "index.js"]
