@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1.2
 ## używam wieloetapowego budowania obrazów
-FROM node:alpine as builder
+## automatyczne dobranie obrazu dla platformy, dla której budujemy
+FROM --platform=$BUILDPLATFORM node:alpine as builder
 
 WORKDIR /app
 
