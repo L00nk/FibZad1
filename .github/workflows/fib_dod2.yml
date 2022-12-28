@@ -41,6 +41,14 @@ jobs:
           username: ${{github.repository_owner}}
           password: ${{secrets.GITHUB_TOKEN}}
 
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /mnt/registry/buildx-cache
+          key: ${{ runner.os }}-multi-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-multi-buildx
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
