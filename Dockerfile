@@ -10,16 +10,13 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
 ###########
 
 FROM node:alpine as runner
 ENV NODE_ENV=production
 ENV NODE_OPTIONS=--openssl-legacy-provider
 
-COPY --from=builder /app/public /app/public
-WORKDIR /app/public
-EXPOSE 3000
-#RUN npm install
-#CMD ["node", "index.js"]
-CMD ["index.html"]
+COPY --from=builder /app /app
+WORKDIR /app
+RUN npm install
+CMD ["npm", "run", "start"]
