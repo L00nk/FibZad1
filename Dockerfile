@@ -13,7 +13,7 @@ COPY . .
 RUN npm run build
 ###########
 
-FROM nginx:latest AS runner
+FROM nginx AS runner
 
 COPY --from=builder /app/public /usr/share/nginx/html
 
