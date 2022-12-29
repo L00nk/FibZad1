@@ -35,7 +35,7 @@ function App() {
           Podaj numer wyrazu ciągu Fibonacciego:
           <input type="number" defaultValue="0" min = "0" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Sprawdź" />
       </form>
       <div id={"container"}>
         Wartość wyrazu: {result}
