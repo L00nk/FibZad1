@@ -3,14 +3,16 @@ import {useState} from "react";
 import classes from "./App.module.css";
 
 //funkcja wyliczająca wartość wyrazu ciągu Fibonacciego o zadanym numerze
-const fibonacci = (num = 1) => {
-    const series = [1, 1];
-    for (let i = 2; i < num; i++) {
-        const a = series[i - 1];
-        const b = series[i - 2];
-        series.push(a + b);
+let fibonacci = (num) => {
+    let a = 0;
+    let b = 1;
+    let sum = 0;
+    for (let i = 2; i <= num; i++) {
+        sum = a + b;
+        a = b;
+        b = sum;
     };
-    return series[num - 1];
+    return num ? b : a;
 };
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
       <form onSubmit={submitHandler}>
         <label>
           Podaj numer wyrazu ciągu Fibonacciego:
-          <input type="number" defaultValue="1" min = "1" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
+          <input type="number" defaultValue="0" min = "0" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
         </label>
         <input type="submit" value="Submit" />
       </form>
