@@ -32,8 +32,8 @@ function App() {
       Grupa I2S 1.5<br></br>
       <form onSubmit={submitHandler}>
         <label>
-          Podaj numer wyrazu ciągu Fibonacciego:
-          <input type="number" defaultValue="0" min = "0" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
+          Podaj numer wyrazu ciągu Fibonacciego z przedziału od 0 do 100:
+          <input type="number" defaultValue="0" min = "0" max = "100" name='number' id='number' onChange={e => setNumber(e.target.value)}/>
         </label>
         <input type="submit" value="Sprawdź" />
       </form>
